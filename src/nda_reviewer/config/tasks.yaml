@@ -1,0 +1,24 @@
+upload_task:
+  description: >
+    Parse the NDA document {uploaded_file} provided in either PDF or Word format.
+    Extract the text content and prepare it for analysis.
+  expected_output: >
+    A clear and structured text output of the NDA document {uploaded_file}, ready for review.
+  agent: uploader
+
+analysis_task:
+  description: >
+    Analyze the NDA content  based on the provided instructions. 
+    Identify any ambiguous terms, clauses requiring clarification, or potential issues.
+  expected_output: >
+    A detailed list of findings, highlighting the identified issues and ambiguities in the NDA document .
+  agent: legal_analyst
+
+recommendation_task:
+  description: >
+    Review the analysis of the NDA  and create a final recommendation for approval, denial, or approval with cautions. 
+    Provide reasoning for the recommendation and list any changes or clarifications to be requested.
+  expected_output: >
+    A final report categorizing the NDA  as Approved, Denied, or Approved with Cautions.
+    Include reasoning and suggested questions or changes for improvement.
+  agent: recommendation_agent
